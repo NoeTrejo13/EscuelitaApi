@@ -8,7 +8,7 @@ class EstudianteModel extends Model{
     protected $primaryKey = 'id';
 
     protected $returnType = 'array';
-    protected $allowedFields = ['nombre', 'apellido', 'dui', 'genero','carnet'];
+    protected $allowedFields = ['nombre', 'apellido', 'dui', 'genero','carnet','grado_id'];
 
     protected $useTimestamps = true;
     protected $createField = 'create_at';
