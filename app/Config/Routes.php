@@ -32,10 +32,15 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->group('api', ['namespace' => 'App\Controllers\API'], function($routes){
+
+	$routes->get('clientes', 'Clientes::index');
+});
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
- * --------------------------------------------------------------------
+ * --------------------------------------------------------------------  
  *
  * There will often be times that you need additional routing and you
  * need it to be able to override any defaults in this file. Environment
