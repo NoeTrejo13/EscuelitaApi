@@ -17,6 +17,7 @@ Options All -Indexes
 	# RewriteBase /
 
 	# Redirect Trailing Slashes...
+	
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^(.*)/$ /$1 [L,R=301]
 
@@ -31,6 +32,7 @@ Options All -Indexes
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^([\s\S]*)$ index.php/$1 [L,NC,QSA]
+	RewriteRule ^ (. *) $ ./Index.php?/$1 [L, QSA]
 
 	# Ensure Authorization header is passed along
     RewriteCond %{HTTP:Authorization} .
@@ -44,5 +46,5 @@ Options All -Indexes
 </IfModule>
 
 # Disable server signature start
-    ServerSignature Off
+    ServerSignature off
 # Disable server signature end
